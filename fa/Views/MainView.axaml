@@ -1,10 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:fa.Vm"
              xmlns:views="clr-namespace:fa.Views"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="vm:ViewModel"
              x:Class="fa.Views.MainView">
   <DockPanel>
@@ -40,6 +37,9 @@
     <views:StatusBar Background="Aquamarine"
                      DockPanel.Dock="Bottom" />
 
+    <views:IconDeets Background="rgba(253, 200, 97, 1.00)"
+                     DockPanel.Dock="Right" />
+
     <Rectangle HorizontalAlignment="Stretch"
                Height="0.5"
                Fill="{DynamicResource TitleBarSeparatorColorTop}"
@@ -51,7 +51,9 @@
                Margin="0 0 0 0"
                DockPanel.Dock="Bottom" />
 
-    <views:LogView Background="White" />
+    <!-- <views:DuoToneSample Background="White" /> -->
+    <views:IconGrid Background="White" />
+    <!-- <views:LogView Background="White" /> -->
 
 
   </DockPanel>

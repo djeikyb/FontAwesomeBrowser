@@ -16,11 +16,14 @@ indent_size = 2
 
 # ReSharper properties
 resharper_xml_attribute_style = first_attribute_on_single_line
+resharper_xml_attribute_indent = align_by_first_attribute
 
 # Xaml files
 [*.{xaml,axaml}]
 indent_style = space
 indent_size = 2
+resharper_xml_attribute_style = first_attribute_on_single_line
+resharper_xml_attribute_indent = align_by_first_attribute
 
 # Xml project files
 [*.{csproj,vcxproj,vcxproj.filters,proj,nativeproj,locproj,wixproj}]

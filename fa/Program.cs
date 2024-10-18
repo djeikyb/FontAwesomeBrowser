@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.Logging;
 using Merviche.Logging.Serilog;
 using Serilog;
 
@@ -20,7 +21,8 @@ class Program
             .UsePlatformDetect()
             .WithInterFont()
             .UseR3()
-            .UseSerilog(App.LogsSink)
+            // .UseSerilog(App.LogsSink)
+            .LogToTrace(LogEventLevel.Debug)
             .AfterSetup(_ =>
             {
                 var logger = Log.ForContext<Program>();

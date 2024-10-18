@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:fa.Vm"
+             x:DataType="vm:ViewModel"
+             x:Class="fa.Views.IconGrid">
+  <UserControl.Styles>
+    <Style Selector="ItemsRepeater > Border:not(.selected)">
+      <Setter Property="Background"
+              Value="Transparent" />
+    </Style>
+    <Style Selector="ItemsRepeater > Border.selected">
+      <Setter Property="Background"
+              Value="rgba(69, 217, 190, 1.00)" />
+    </Style>
+  </UserControl.Styles>
+  <ScrollViewer AllowAutoHide="False">
+    <ItemsRepeater Margin="3 3 0 3"
+                   ItemsSource="{Binding IconList}">
+      <ItemsRepeater.Layout>
+        <UniformGridLayout MinColumnSpacing="0"
+                           MinRowSpacing="0"
+                           Orientation="Horizontal" />
+      </ItemsRepeater.Layout>
+      <ItemsRepeater.ItemTemplate>
+        <DataTemplate>
+          <Border Padding="0"
+                  Margin="0"
+                  Classes.selected="{Binding IsSelected.Value}">
+            <PathIcon Margin="6"
+                      Padding="0"
+                      Foreground="Coral"
+                      ToolTip.ShowDelay="200"
+                      Data="{Binding Path}" />
+            <ToolTip.Tip>
+              <TextBlock>
+                <Run Text="{Binding Icon.Label}" />
+                <Run Text="{Binding Style}" />
+              </TextBlock>
+            </ToolTip.Tip>
+          </Border>
+        </DataTemplate>
+      </ItemsRepeater.ItemTemplate>
+    </ItemsRepeater>
+  </ScrollViewer>
+</UserControl>

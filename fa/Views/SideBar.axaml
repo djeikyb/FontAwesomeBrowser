@@ -3,15 +3,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:fa.Vm"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
              x:DataType="vm:ViewModel"
              Background="#fffaafaf"
              x:Class="fa.Views.SideBar">
   <StackPanel Orientation="Vertical">
-    <SelectableTextBlock Text="ahm" />
-    <SelectableTextBlock Text="in" />
-    <SelectableTextBlock Text="ur" />
-    <SelectableTextBlock Text="side bar" />
+
+    <ListBox ItemsSource="{Binding StyleList}"
+             SelectedItem="{Binding StyleListItemSelected.Value}">
+    </ListBox>
 
     <NumericUpDown Increment="0.1"
                    Minimum="0.0"
@@ -23,13 +25,17 @@
       <NumericUpDown.Styles>
         <Style
           Selector="NumericUpDown /template/ ButtonSpinner#PART_Spinner:right /template/ RepeatButton#PART_IncreaseButton">
-          <Setter Property="Background" Value="GreenYellow" />
-          <Setter Property="MinWidth" Value="15" />
+          <Setter Property="Background"
+                  Value="GreenYellow" />
+          <Setter Property="MinWidth"
+                  Value="15" />
         </Style>
         <Style
           Selector="NumericUpDown /template/ ButtonSpinner#PART_Spinner:right /template/ RepeatButton#PART_DecreaseButton">
-          <Setter Property="Background" Value="GreenYellow" />
-          <Setter Property="MinWidth" Value="15" />
+          <Setter Property="Background"
+                  Value="GreenYellow" />
+          <Setter Property="MinWidth"
+                  Value="15" />
         </Style>
       </NumericUpDown.Styles>
     </NumericUpDown>
@@ -39,30 +45,28 @@
                            Margin="36 0 -60 0"
                            Padding="0"
                            RenderTransform="rotate(-90deg)" />
-      <Slider
-        Height="100"
-        Orientation="Vertical"
-        TickPlacement="BottomRight"
-        TickFrequency=".1"
-        IsSnapToTickEnabled="True"
-        HorizontalAlignment="Stretch"
-        Minimum="0"
-        Maximum="1"
-        Margin="0"
-        Padding="0"
-        Value="{Binding TintOpacity.Value}" />
+      <Slider Height="100"
+              Orientation="Vertical"
+              TickPlacement="BottomRight"
+              TickFrequency=".1"
+              IsSnapToTickEnabled="True"
+              HorizontalAlignment="Stretch"
+              Minimum="0"
+              Maximum="1"
+              Margin="0"
+              Padding="0"
+              Value="{Binding TintOpacity.Value}" />
 
-      <Slider
-        Height="100"
-        Orientation="Vertical"
-        TickFrequency=".1"
-        IsSnapToTickEnabled="True"
-        HorizontalAlignment="Stretch"
-        Minimum="0"
-        Maximum="1"
-        Margin="-18"
-        Padding="0"
-        Value="{Binding MaterialOpacity.Value}" />
+      <Slider Height="100"
+              Orientation="Vertical"
+              TickFrequency=".1"
+              IsSnapToTickEnabled="True"
+              HorizontalAlignment="Stretch"
+              Minimum="0"
+              Maximum="1"
+              Margin="-18"
+              Padding="0"
+              Value="{Binding MaterialOpacity.Value}" />
 
       <SelectableTextBlock Text="Material"
                            Margin="-54 0 36 0"
@@ -80,17 +84,22 @@
       <NumericUpDown.Styles>
         <Style
           Selector="NumericUpDown /template/ ButtonSpinner#PART_Spinner:right /template/ RepeatButton#PART_IncreaseButton">
-          <Setter Property="Background" Value="GreenYellow" />
-          <Setter Property="MinWidth" Value="15" />
+          <Setter Property="Background"
+                  Value="GreenYellow" />
+          <Setter Property="MinWidth"
+                  Value="15" />
         </Style>
         <Style
           Selector="NumericUpDown /template/ ButtonSpinner#PART_Spinner:right /template/ RepeatButton#PART_DecreaseButton">
-          <Setter Property="Background" Value="GreenYellow" />
-          <Setter Property="MinWidth" Value="15" />
+          <Setter Property="Background"
+                  Value="GreenYellow" />
+          <Setter Property="MinWidth"
+                  Value="15" />
         </Style>
       </NumericUpDown.Styles>
     </NumericUpDown>
 
-    <ToggleSwitch Name="SideBarBackgroundSwitch" IsChecked="True" />
+    <ToggleSwitch Name="SideBarBackgroundSwitch"
+                  IsChecked="True" />
   </StackPanel>
 </UserControl>

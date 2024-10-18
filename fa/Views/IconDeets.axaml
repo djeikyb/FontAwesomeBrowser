@@ -1,0 +1,81 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:fa.Vm"
+             xmlns:views="clr-namespace:fa.Views"
+             x:DataType="vm:ViewModel"
+             x:Class="fa.Views.IconDeets">
+  <DockPanel Width="176">
+
+    <StackPanel DockPanel.Dock="Top"
+                Background="rgba(255, 223, 175, 1.00)">
+      <TextBlock Text="{Binding PreviewItem.Value.Icon.Label, FallbackValue='Nothing selected'}" />
+
+      <Panel Height="{DynamicResource TextControlThemeMinHeight}">
+        <ScrollViewer>
+          <TextBlock TextWrapping="WrapWithOverflow"
+                     Text="{Binding PreviewItem.Value.SearchTermsCsv}" />
+        </ScrollViewer>
+      </Panel>
+    </StackPanel>
+
+    <TextBox DockPanel.Dock="Bottom"
+             Text="{Binding PreviewItem.Value.Path}" />
+
+    <ListBox DockPanel.Dock="Bottom"
+             ItemsSource="{Binding PreviewItem.Value.Icon.Styles, Converter={x:Static views:Converters.StyleEnumConverter}}"
+             SelectedItem="{Binding PreviewStyleSelected.Value}" />
+
+    <StackPanel DockPanel.Dock="Bottom"
+                Orientation="Horizontal">
+      <Viewbox MaxHeight="8"
+               Margin="6 0 0 6"
+               VerticalAlignment="Bottom"
+               Stretch="Uniform">
+        <PathIcon Data="{Binding PreviewItem.Value.Path}" />
+      </Viewbox>
+      <Viewbox MaxHeight="10"
+               Margin="6 0 0 6"
+               VerticalAlignment="Bottom"
+               Stretch="Uniform">
+        <PathIcon Data="{Binding PreviewItem.Value.Path}" />
+      </Viewbox>
+      <Viewbox MaxHeight="12"
+               Margin="6 0 0 6"
+               VerticalAlignment="Bottom"
+               Stretch="Uniform">
+        <PathIcon Data="{Binding PreviewItem.Value.Path}" />
+      </Viewbox>
+      <Viewbox MaxHeight="16"
+               Margin="6 0 0 6"
+               VerticalAlignment="Bottom"
+               Stretch="Uniform">
+        <PathIcon Data="{Binding PreviewItem.Value.Path}" />
+      </Viewbox>
+      <Viewbox MaxHeight="20"
+               Margin="6 0 0 6"
+               VerticalAlignment="Bottom"
+               Stretch="Uniform">
+        <PathIcon Data="{Binding PreviewItem.Value.Path}" />
+      </Viewbox>
+      <Viewbox MaxHeight="24"
+               Margin="6 0 0 6"
+               VerticalAlignment="Bottom"
+               Stretch="Uniform">
+        <PathIcon Data="{Binding PreviewItem.Value.Path}" />
+      </Viewbox>
+      <Viewbox MaxHeight="32"
+               Margin="6 0 0 6"
+               VerticalAlignment="Bottom"
+               Stretch="Uniform">
+        <PathIcon Data="{Binding PreviewItem.Value.Path}" />
+      </Viewbox>
+    </StackPanel>
+
+    <Viewbox MaxHeight="128"
+             Margin="0 12 0 12"
+             Stretch="Uniform">
+      <PathIcon Data="{Binding PreviewItem.Value.Path}"></PathIcon>
+    </Viewbox>
+
+  </DockPanel>
+</UserControl>

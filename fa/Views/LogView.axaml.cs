@@ -25,7 +25,7 @@ public partial class LogView : UserControl
             var vm = lv.DataContext as ViewModel;
             if (vm is null) return;
 
-            var source = new FlatTreeDataGridSource<LogEvent>(vm.View)
+            var source = new FlatTreeDataGridSource<LogEvent>(vm.LogViews)
             {
                 Columns =
                 {
